@@ -1,5 +1,5 @@
 class PlayersController < ApplicationController
-  before_action :set_player, only: [:edit, :destroy, :show, :update]
+  before_action :set_player, only: [:destroy, :show]
 
   def create
     @player = Player.new(player_params)
@@ -16,8 +16,8 @@ class PlayersController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def edit
-  end
+#  def edit
+#  end
 
   def new
     @player = Player.new
@@ -26,13 +26,13 @@ class PlayersController < ApplicationController
   def show
   end
 
-  def update
-    if @player.update_attributes(player_params)
-      redirect_to player_path(@player)
-    else
-      render :edit
-    end
-  end
+#  def update
+#    if @player.update_attributes(player_params)
+#      redirect_to player_path(@player)
+#    else
+#      render :edit
+#    end
+#  end
 
   private
 
